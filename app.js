@@ -1,3 +1,4 @@
+//Author: Khariton Gorbunov
 function updateJson(commandJson, myPolys) {//updates json file by removing the old polygons and inserting the new
     var ID1 = commandJson["polygon 1"];
     var ID2 = commandJson["polygon 2"];
@@ -9,9 +10,6 @@ function updateJson(commandJson, myPolys) {//updates json file by removing the o
     } else if (commandJson["operation"] == "intersect") {
         p3 = polygonClipping.intersection(p1, p2);
     }
-    console.log("hello");
-    console.log(p3[0]);
-    console.log("its me");
     if (p3[0]) {
         myPolys["features"][ID2]["geometry"]["coordinates"] = p3[0];
     } else {

@@ -1,4 +1,5 @@
 README
+Author: Khariton Gorbunov
 
 File system:
 -Spacemaker_poly_manipulator
@@ -11,6 +12,7 @@ File system:
 Dependencies:
 -Node.js
 #install through website download
+!All npm dependencies must be installed in the same folder as the server script!
 -Polygon clipping, computational geometry library to handle polygon operations
 $npm i polygon-clipping
 -Socket.io, handles socket communication

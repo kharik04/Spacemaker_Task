@@ -1,13 +1,12 @@
+//Author: Khariton Gorbunov
 //operator functions
 function setOperationUnion() {
     operation = "union";
-    console.log(operation);
     operate(operation);
 }
 
 function setOperationIntersect() {
     operation = "intersect";
-    console.log(operation);
     operate(operation);
 }
 
@@ -60,7 +59,6 @@ $("form#controls").submit(function(e) {
 //receive message from server with updated geojson
 socket.on("update geojson", function(msg) {
     myPolys = JSON.parse(msg);
-    console.log(myPolys);
     //remove old layer
     var removeMarkers = function() {
         mymap.eachLayer(function(layer) {
@@ -85,7 +83,6 @@ socket.on("update geojson", function(msg) {
             layer.myTag = "myGeoJSON"
         }
     }).on('click', function(e) {
-        console.log(e.layer.feature.properties.ID);
         // Operations selecting the polygons 
         if (polystack[0] == null) {
             polystack[0] = e.layer;
